@@ -1,0 +1,34 @@
+public class BubbleSort {
+    public static void swap(int[] a, int i, int j) {
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+
+    public static void bubSort(int[] a) {
+        for (int i=0; i<a.length; i++) {
+            for (int j=0; j<a.length-1; j++) {
+                if (a[j] > a[j+1]) {
+                    swap(a, j, j+1);
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] a = new int[]{38, 27, 43, 3, 9, 82, 10, -1};
+        
+        System.out.println("Before Sort: ");
+        for (int i : a)
+            System.out.print(i + " ");
+        System.out.println("\n");
+        
+        bubSort(a);
+
+        System.out.println("After Sort: ");
+        for (int i : a)
+            System.out.print(i + " ");
+
+        System.out.println("\n");
+    }
+}
